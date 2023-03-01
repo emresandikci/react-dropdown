@@ -8,11 +8,14 @@ export const useDropdownStyles = createUseStyles((theme: typeof defaultTheme) =>
     minWidth: theme.maxWidth.md,
   },
   dropdownButton: {
+    display: 'inline-flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     backgroundColor: theme.colors.white,
     border: `1px solid ${theme.colors.gray[400]}`,
     borderRadius: theme.borderRadius.lg,
-    color: theme.colors.gray[700],
-    display: 'inline-block',
+    color: theme.colors.gray[400],
+    fontSize: theme.fontSize.lg,
     fontWeight: theme.fontWeight.medium,
     lineHeight: theme.lineHeight.none,
     padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
@@ -68,5 +71,14 @@ export const useDropdownStyles = createUseStyles((theme: typeof defaultTheme) =>
     borderColor: theme.colors.blue[500],
     color: theme.colors.blue[900],
     boxShadow: `${theme.colors.blue[200]} 0px 0px 0px 3px;`,
+  },
+  iconCarot: {
+    stroke: theme.colors.gray[600],
+  },
+  iconCarotDown: {
+    transform: 'rotate(90deg)',
+  },
+  iconCarotUp: {
+    transform: 'rotate(-90deg)',
   },
 }));

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDropdownStyles } from './styles';
-
+import { ReactComponent as IconCaret } from 'assets/icons/caret.svg';
 export interface IOption {
   label: string;
   value: string;
@@ -8,8 +8,6 @@ export interface IOption {
 
 export interface IDropdownProps {
   options: IOption[];
-  label?: string;
-  value?: string;
   placeholder?: string;
   onChange?: (value: IOption) => void;
 }
@@ -47,7 +45,10 @@ const Dropdown: React.FC<IDropdownProps> = ({
         className={`${classes.dropdownButton} ${isOpen ? classes.active : ''}`}
         onClick={handleDropdownClick}
       >
-        {selectedOption ? selectedOption.label : placeholder}
+        <span>{selectedOption ? selectedOption.label : placeholder}</span>
+        <IconCaret
+          className={`${classes.iconCarot} ${isOpen ? classes.iconCarotUp : classes.iconCarotDown}`}
+        />
       </button>
       <ul className={`${classes.dropdownMenu} ${!isOpen ? classes.hidden : ''}`}>
         {options.map((option) => (
