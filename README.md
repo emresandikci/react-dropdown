@@ -53,7 +53,7 @@ git commit -m "docs(readme): add server link"
 Use below script for clone repository and install dependencies.
 
 ```bash
-git clone https://github.com/emresandikci/react-dropdown.git && cd react-dropdown && yarn install
+git clone https://github.com/emresandikci/react-dropdown.git && cd react-dropdown && yarn install && yarn start
 ```
 
 # Available Scripts to run development server
