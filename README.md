@@ -83,7 +83,3 @@ Automated test coded with Cypress. Please follow the below instructions to run t
 For the headless tests run below script
 
 ### `yarn test`
-
-If you want to see tests visually then run below script and choose a test from running browser to start test senario
-
-### `yarn test:open`
