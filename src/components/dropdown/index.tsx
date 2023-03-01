@@ -16,6 +16,7 @@ const Dropdown: React.FC<IDropdownProps> = ({
   options,
   placeholder = 'Select an option',
   onChange,
+  ...props
 }) => {
   const classes = useDropdownStyles();
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +41,7 @@ const Dropdown: React.FC<IDropdownProps> = ({
   };
 
   return (
-    <div className={classes.dropdown} ref={dropdownRef}>
+    <div className={classes.dropdown} ref={dropdownRef} {...props}>
       <button
         className={`${classes.dropdownButton} ${isOpen ? classes.active : ''}`}
         onClick={handleDropdownClick}
