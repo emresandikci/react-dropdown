@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDropdownStyles } from './styles';
 import { ReactComponent as IconCaret } from 'assets/icons/caret.svg';
+import { useOnClickOutside } from 'hooks';
 export interface IOption {
   label: string;
   value: string;
@@ -24,13 +25,7 @@ const Dropdown: React.FC<IDropdownProps> = ({
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    document.addEventListener('click', (event) => {
-      const element = dropdownRef.current;
-      if (element && element?.contains(event.target as Node)) return;
-      setIsOpen(false);
-    });
-  }, []);
+  useOnClickOutside(dropdownRef, () => setIsOpen(false));
 
   const handleDropdownClick = () => setIsOpen((state) => !state);
 
